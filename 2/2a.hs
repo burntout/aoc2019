@@ -4,7 +4,7 @@ import qualified Data.Sequence as S
 import Data.List.Split
 
 main = do
-    tls <- fmap Text.lines (Text.readFile "input")
+    tls <- fmap Text.lines (Text.readFile "input.txt")
     let ss = map stringToInt $ head $ map (splitOn "," . Text.unpack) tls
         seq = S.fromList ss
         result = program $ initialise seq 1202
